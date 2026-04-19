@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Format Python with Black and isort",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "/opt/conda/bin/black --skip-magic-trailing-comma --line-length 300 \"${file}\" && /opt/conda/bin/isort \"${file}\""
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

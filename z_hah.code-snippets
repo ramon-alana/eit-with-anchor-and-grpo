@@ -1,0 +1,26 @@
+{
+	"python:path_mkdir": {
+		"prefix": "python:path_mkdir",
+		"body": [
+			"Path(out).parent.mkdir(parents=True, exist_ok=True, mode=0o777)",
+			""
+		],
+		"description": "python:path_mkdir"
+	},
+	"Poor Man's Configurator": {
+		"prefix": "poorcfg",
+		"body": [
+			"# -----------------------------------------------------------------------------",
+			"# default config values",
+			"# -----------------------------------------------------------------------------",
+			"# make sure all variant in this file!",
+			"config_keys = [",
+			"    k for k, v in globals().items() if not k.startswith(\"_\") and not k in [\"sys\", \"os\", \"pd\", \"ET\", \"defaultdict\", \"Path\", \"random\", \"literal_eval\"] and not isinstance(v, (types.ModuleType, type, types.FunctionType, types.BuiltinFunctionType)) and not callable(v)  and k.isupper()  # 排除导入的模块/常用别名",
+			"]",
+			"exec(open(\"configurator.py\").read())  # overrides from command line or config file",
+			"config = {k: globals()[k] for k in config_keys}  # will be useful for logging",
+			"# -----------------------------------------------------------------------------"
+		],
+		"description": "Poor Man's Configurator"
+	}
+}

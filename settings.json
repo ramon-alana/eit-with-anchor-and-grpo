@@ -1,0 +1,24 @@
+{
+    "python.defaultInterpreterPath": "/opt/conda/bin/python",
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/flow_grpo:${workspaceFolder}/omnigen2"
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/flow_grpo",
+    ],
+    "terminal.integrated.fontSize": 13,
+    "editor.fontSize": 14,
+    "window.zoomLevel": -0.4,
+    "terminal.integrated.lineHeight": 1.2, // 行高倍数，优化排版
+    "terminal.integrated.fontWeight": "normal", // 避免 macOS 下发虚
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Microsoft YaHei'",
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "[markdown]": {
+        // Markdown 写作友好
+        "editor.lineHeight": 1.7,
+        "editor.fontSize": 15,
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}
